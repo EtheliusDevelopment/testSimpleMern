@@ -2,10 +2,12 @@ const express = require ('express');
 const app = express()
 const morgan = require('morgan')
 const path = require('path')
+const connectDB = require('./database')
+
 
 // const taskrouter = require('../src/routes/task.routes')
 
-
+connectDB()
 
 // Settings
 
