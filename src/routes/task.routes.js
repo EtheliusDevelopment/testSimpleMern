@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req,res) => {
-    res.send('Prova Router')
+    res.json({
+        status : 'Api Working'
+    })
 })
 
 module.exports=router;
