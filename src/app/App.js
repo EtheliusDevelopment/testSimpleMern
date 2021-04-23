@@ -35,9 +35,10 @@ class App extends Component {
             .then(res => res.json())
             .then(data => {
                 console.log(data);  
-              window.M.toast({html: 'Task Updated'});
-              this.setState({_id: '', title: '', description: ''});
-              this.fetchTasks();
+                M.toast({html: 'Task Updated'});
+                this.setState({title : '', description : '', _id : ''});
+                this.fetchTask()
+              
             });
         } else {
           fetch('/api/tasks', {
@@ -51,9 +52,9 @@ class App extends Component {
             .then(res => res.json())
             .then(data => {
               console.log(data);
-              window.M.toast({html: 'Task Saved'});
+              M.toast({html: 'Task Saved'});
               this.setState({title: '', description: ''});
-              this.fetchTasks();
+              this.fetchTask();
             })
             .catch(err => console.error(err));
         }
